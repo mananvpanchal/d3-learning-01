@@ -22,7 +22,7 @@ class SVG extends React.Component {
 
     let xScale = scaleBand()
     .domain(dataSet)
-    .range([0, w], 0.2);
+    .range([0, w]);
 
     let xAxis = axisBottom()
     .scale(xScale);
