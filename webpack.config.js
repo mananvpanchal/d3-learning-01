@@ -6,7 +6,7 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
-    './src/index'
+    './src/area-chart'
   ],
   output: {
     path: path.join(__dirname, './dist'),

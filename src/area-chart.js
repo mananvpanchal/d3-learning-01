@@ -44,15 +44,15 @@ class SVG extends React.Component {
     xg = select(xg);
     xg.call(xAxis);
 
-    let lineFunc = line()
+    let areaFunc = area()
     .curve(curveBasis)
     .x((d) => {
       return xScale(d.x);
     })
-    //.y0((d) => {
-    //  return yScale(0);
-    //})
-    .y((d) => {
+    .y0((d) => {
+      return yScale(0);
+    })
+    .y1((d) => {
       return yScale(d.y);
     });
 
@@ -64,8 +64,7 @@ class SVG extends React.Component {
         <g transform={'translate('+margin.left+', '+margin.top+')'}>
           {yg.node().toReact()}
           {xg.node().toReact()}
-          <path fill={'none'} stroke={'blue'} strokeWidth={'2'}
-            d={lineFunc(dataSet)} />
+          <path fill={'teal'} d={areaFunc(dataSet)} />
         </g>
       </svg>
     );
